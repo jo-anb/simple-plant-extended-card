@@ -1,5 +1,5 @@
 {
-    "source": "src/simple-plant.ts",
+    "source": "src/simple-plant-extended.ts",
     "module": "dist/simple-plant-extended-card.js",
     "scripts": {
         "watch": "parcel watch",
