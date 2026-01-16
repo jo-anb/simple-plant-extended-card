@@ -1,5 +1,5 @@
 {
-    "name": "Simple Plant Card",
+    "name": "Simple Plant Extended Card",
     "homeassistant": "2025.2.4",
     "hacs": "2.0.1",
     "hide_default_branch": true,

@@ -54,3 +54,33 @@ export function relativeDate(isoDateString: string, local: string = "en", today:
     else
         return relativeTimeFormat.format(diff_days, "day");
 }
+
+export function isToday(dateString: string) {
+  const inputDate = new Date(dateString);
+  const today = new Date();
+
+  return (
+    inputDate.getFullYear() === today.getFullYear() &&
+    inputDate.getMonth() === today.getMonth() &&
+    inputDate.getDate() === today.getDate()
+  );
+}
+export function isPast(dateString: string) {
+  const inputDate = new Date(dateString);
+  const now = new Date();
+
+  return inputDate < now;
+}
+export function daysBetween(date1, date2) {
+  const d1 = new Date(date1);
+  const d2 = new Date(date2);
+
+  // Clear time part to ensure whole-day comparison
+  d1.setHours(0, 0, 0, 0);
+  d2.setHours(0, 0, 0, 0);
+
+  const millisecondsPerDay = 1000 * 60 * 60 * 24;
+  const diff = Math.abs(d2 - d1);
+
+  return Math.floor(diff / millisecondsPerDay);
+}

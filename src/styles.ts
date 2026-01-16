@@ -2,8 +2,7 @@ import { css } from "lit";
 
 export const styles = css`
     .hidden {
-        display: none;
-        /* opacity: 0; */
+        display: none !important;
     }
 
     .card-content {
@@ -19,8 +18,12 @@ export const styles = css`
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: flex-start;
-        gap: 16px;
+        justify-content: space-between;
+        gap: 8px;
+    }
+    .border_row {
+        border-top: 1px solid var(--divider-color);
+        border-bottom: 1px solid var(--divider-color);
     }
 
     .content {
@@ -32,6 +35,29 @@ export const styles = css`
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
+    }
+    .sub_content {
+        font-size: 14px;
+        flex-grow: 2;
+        gap: 8px;
+        align-items: center;
+        justify-content: flex-between;
+    }
+
+    .grow {
+        flex-grow: 2;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 4px;
+    }
+    .sub_content_conditional {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 4px;
     }
 
     .sub {
@@ -74,7 +100,7 @@ export const styles = css`
 
 
     ha-icon {
-        display: flex;
+        // display: flex;
         position: relative;
     }
 
@@ -100,5 +126,33 @@ export const styles = css`
         transform: translateY(-50%);
         width: 100%;
         font-size: 10px;
+    }
+    
+    .sub_icon {
+        width: 28px;
+        height: 28px;
+    }
+    sub-icon-content ha-icon::after {
+        content: attr(data-days, "");
+        position: absolute;
+        top: calc( 50% + 1px );
+        left: 8px;
+        transform: translateY(-50%);
+        width: 100%;
+        font-size: 8px;
+    }
+    .sub_icon_button {
+        // display: block;
+        cursor: pointer;
+        // background-color: rgb(0,0,0);
+        // border-radius: 50%;
+    }
+    .sub_icon_button:hover {
+        color: green;
+    }
+    .repeat_icon {
+        color: var(--secondary-text-color);
+        width: 34px;
+        height: 34px;
     }
 `
