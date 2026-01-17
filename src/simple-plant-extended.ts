@@ -1,5 +1,5 @@
-import { SimplePlantCard } from "./card";
-import { SimplePlantCardEditor } from "./editor";
+import { SimplePlantExtendedCard } from "./card";
+import { SimplePlantExtendedCardEditor } from "./editor";
 import {
     CARD_TYPE,
     CARD_NAME,
@@ -14,8 +14,8 @@ console.info(
     "color: green;",
 );
 
-customElements.define(`${CARD_TYPE}-editor`, SimplePlantCardEditor);
-customElements.define(CARD_TYPE, SimplePlantCard);
+customElements.define(`${CARD_TYPE}-editor`, SimplePlantExtendedCardEditor);
+customElements.define(CARD_TYPE, SimplePlantExtendedCard);
 
 // Define Window.customCards type for TS not to complain
 declare global {

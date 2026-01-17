@@ -7,11 +7,11 @@ import { daysBetween, isToday, isPast } from "./helpers";
 import { HomeAssistant2, Dictionary, Entity, relativeDate } from "./helpers"
 
 
-export interface SimplePlantCardConfig extends LovelaceCardConfig {
+export interface SimplePlantExtendedCardConfig extends LovelaceCardConfig {
   device: string;
 }
 
-export class SimplePlantCard extends LitElement {
+export class SimplePlantExtendedCard extends LitElement {
 
     // properties
     private _hass : HomeAssistant2;
@@ -87,7 +87,7 @@ export class SimplePlantCard extends LitElement {
 
     static styles =  styles;
 
-    setConfig(config : SimplePlantCardConfig) {
+    setConfig(config : SimplePlantExtendedCardConfig) {
         // Triggers everytime the config of the card change
         if (!config.device) {
             throw new Error("You need to define a name");
@@ -137,7 +137,7 @@ export class SimplePlantCard extends LitElement {
         const today = this._translations["today"];
 
         //HEALTH Constants
-        const health_key_prefix = "component.simple_plant.entity.select.health.state";
+        const health_key_prefix = "component.simple_plant_extended.entity.select.health.state";
         const health_key = `${health_key_prefix}.${this._entity_states.get("health").state}`;
         const health = this._hass.localize(health_key);
         const healthColor = this._entity_states.get("health").attributes.color;
@@ -182,7 +182,7 @@ export class SimplePlantCard extends LitElement {
         
         //DETAILS Constants
         const light_state = this._entity_states.get("illumination").state.toLowerCase();
-        const light_key_prefix = "component.simple_plant.entity.select.illumination.state";
+        const light_key_prefix = "component.simple_plant_extended.entity.select.illumination.state";
         const light_key = `${light_key_prefix}.${this._entity_states.get("illumination").state}`;
         const light = this._hass.localize(light_key);  
         const light_color = light_state === "sunny" ? "gold" : light_state === "partly_sunny" ? "darkgoldenrod" : "dimgrey";
@@ -466,7 +466,7 @@ export class SimplePlantCard extends LitElement {
         const entity_ids = device_entities.map(({entity_id}) => (entity_id))
         // parse entities
         entity_ids.forEach(id => {
-            SimplePlantCard.keys.forEach((key) => {
+            SimplePlantExtendedCard.keys.forEach((key) => {
                 if (id.includes(key)) {
                 // Associate the corresponding key with the matched string
                 this._entity_ids[key] = id;
