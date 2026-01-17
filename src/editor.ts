@@ -3,7 +3,7 @@ import { html, LitElement } from 'lit';
 
 import { INTEGRATION } from "./consts"
 
-export class SimplePlantCardEditor extends LitElement {
+export class SimplePlantExtendedCardEditor extends LitElement {
 
     private _hass : HomeAssistant;
     private _config : LovelaceCardConfig;
@@ -60,7 +60,7 @@ export class SimplePlantCardEditor extends LitElement {
             <ha-form
                 .hass=${this._hass}
                 .data=${this._config}
-                .schema=${SimplePlantCardEditor.schema}
+                .schema=${SimplePlantExtendedCardEditor.schema}
                 .computeLabel=${this._computeLabel}
                 @value-changed=${this._valueChanged}
             ></ha-form>
