@@ -24,3 +24,48 @@ OR
 https://github.com/jo-anb/simple-plant-extended-card
 1. Where asked for a type, select `dashboard`
 2. Click the download button. ⬇️
+
+## Development
+
+### Building
+
+```bash
+npm install
+npm run build
+```
+
+### Releasing
+
+This project uses [semantic-release](https://semantic-release.gitbook.io/) for automated releases.
+
+**Important**: Follow [Conventional Commits](https://www.conventionalcommits.org/) format for your commit messages:
+- `feat:` - New feature (triggers minor version bump)
+- `fix:` - Bug fix (triggers patch version bump)
+- `docs:` - Documentation changes (no version bump)
+- `chore:` - Maintenance tasks (no version bump)
+
+#### To create a release:
+
+1. Make sure you have a `.env` file with your `GH_TOKEN`:
+   ```
+   GH_TOKEN=your_github_token_here
+   ```
+
+2. Run the release command:
+   ```bash
+   npm run release
+   ```
+
+   Or for a dry run to see what would happen:
+   ```bash
+   npm run release:dry
+   ```
+
+This will automatically:
+- Analyze commits since the last release
+- Determine the next version number
+- Update package.json and package-lock.json
+- Generate/update CHANGELOG.md
+- Create a git commit and tag
+- Push to GitHub
+- Create a GitHub release
