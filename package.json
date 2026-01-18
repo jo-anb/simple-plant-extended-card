@@ -1,9 +1,13 @@
 {
+    "name": "simple-plant-extended-card",
+    "version": "1.2.3",
     "source": "src/simple-plant-extended.ts",
     "module": "dist/simple-plant-extended-card.js",
     "scripts": {
         "watch": "parcel watch",
-        "build": "parcel build"
+        "build": "parcel build",
+        "release": "dotenv -- semantic-release",
+        "release:dry": "dotenv -- semantic-release --dry-run"
     },
     "targets": {
         "module": {
@@ -12,7 +16,11 @@
     },
     "devDependencies": {
         "@parcel/transformer-inline-string": "^2.14.4",
-        "parcel": "^2.14.4"
+        "@semantic-release/changelog": "^6.0.3",
+        "@semantic-release/git": "^10.0.1",
+        "dotenv-cli": "^11.0.0",
+        "parcel": "^2.14.4",
+        "semantic-release": "^24.2.9"
     },
     "dependencies": {
         "custom-card-helpers": "^1.9.0",
