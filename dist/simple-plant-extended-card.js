@@ -616,7 +616,7 @@ const $ab210b2da7b39b9d$export$f5c524615a7708d6 = {
 const $3cb55e3e7ebd776a$export$a970e6ec17c9a61d = "simple_plant_extended";
 const $3cb55e3e7ebd776a$export$31089ea8b3e502e3 = "simple-plant-extended-card";
 const $3cb55e3e7ebd776a$export$112ee299e69fdf7 = "Simple Plant Extended Card";
-const $3cb55e3e7ebd776a$export$ce612590f71e0c8a = "Custom card for simple-plant extended integration";
+const $3cb55e3e7ebd776a$export$ce612590f71e0c8a = "Custom card for simple-plant-extended integration";
 const $3cb55e3e7ebd776a$export$d5e7ce6d07daf10f = "v1.0.0";
 const $3cb55e3e7ebd776a$export$6af2e7fd4d06fd68 = "jo-anb";
 
@@ -824,7 +824,7 @@ function $feccc7a5980a21d5$export$416492d1a5f46c79(date1, date2) {
 }
 
 
-class $a399cc6bbb0eb26a$export$ca6a74221cf9b5c5 extends (0, $ab210b2da7b39b9d$export$3f2f9f5909897157) {
+class $a399cc6bbb0eb26a$export$5cbd5455d3b33941 extends (0, $ab210b2da7b39b9d$export$3f2f9f5909897157) {
     static{
         this.keys = [
             "mark_watered",
@@ -927,7 +927,7 @@ class $a399cc6bbb0eb26a$export$ca6a74221cf9b5c5 extends (0, $ab210b2da7b39b9d$ex
         const local = this._hass.language;
         const today = this._translations["today"];
         //HEALTH Constants
-        const health_key_prefix = "component.simple_plant.entity.select.health.state";
+        const health_key_prefix = "component.simple_plant_extended.entity.select.health.state";
         const health_key = `${health_key_prefix}.${this._entity_states.get("health").state}`;
         const health = this._hass.localize(health_key);
         const healthColor = this._entity_states.get("health").attributes.color;
@@ -967,7 +967,7 @@ class $a399cc6bbb0eb26a$export$ca6a74221cf9b5c5 extends (0, $ab210b2da7b39b9d$ex
         const mist_todo = this._entity_states.get("misting_todo").state === "on";
         //DETAILS Constants
         const light_state = this._entity_states.get("illumination").state.toLowerCase();
-        const light_key_prefix = "component.simple_plant.entity.select.illumination.state";
+        const light_key_prefix = "component.simple_plant_extended.entity.select.illumination.state";
         const light_key = `${light_key_prefix}.${this._entity_states.get("illumination").state}`;
         const light = this._hass.localize(light_key);
         const light_color = light_state === "sunny" ? "gold" : light_state === "partly_sunny" ? "darkgoldenrod" : "dimgrey";
@@ -1180,7 +1180,7 @@ class $a399cc6bbb0eb26a$export$ca6a74221cf9b5c5 extends (0, $ab210b2da7b39b9d$ex
         };
     }
     // Specific to Simple Plant
-    _handleButton() {
+    _handleButton(type) {
         if (type == "water") this._hass.callService("button", "press", {}, {
             entity_id: this._entity_ids["mark_watered"]
         });
@@ -1218,7 +1218,7 @@ class $a399cc6bbb0eb26a$export$ca6a74221cf9b5c5 extends (0, $ab210b2da7b39b9d$ex
         const entity_ids = device_entities.map(({ entity_id: entity_id })=>entity_id);
         // parse entities
         entity_ids.forEach((id)=>{
-            $a399cc6bbb0eb26a$export$ca6a74221cf9b5c5.keys.forEach((key)=>{
+            $a399cc6bbb0eb26a$export$5cbd5455d3b33941.keys.forEach((key)=>{
                 if (id.includes(key)) // Associate the corresponding key with the matched string
                 this._entity_ids[key] = id;
             });
@@ -1250,7 +1250,7 @@ class $a399cc6bbb0eb26a$export$ca6a74221cf9b5c5 extends (0, $ab210b2da7b39b9d$ex
 
 
 
-class $d067581fc0d59830$export$2630dac655fddcab extends (0, $ab210b2da7b39b9d$export$3f2f9f5909897157) {
+class $d067581fc0d59830$export$22bae9358daff77d extends (0, $ab210b2da7b39b9d$export$3f2f9f5909897157) {
     static{
         this.schema = [
             {
@@ -1298,7 +1298,7 @@ class $d067581fc0d59830$export$2630dac655fddcab extends (0, $ab210b2da7b39b9d$ex
             <ha-form
                 .hass=${this._hass}
                 .data=${this._config}
-                .schema=${$d067581fc0d59830$export$2630dac655fddcab.schema}
+                .schema=${$d067581fc0d59830$export$22bae9358daff77d.schema}
                 .computeLabel=${this._computeLabel}
                 @value-changed=${this._valueChanged}
             ></ha-form>
@@ -1318,8 +1318,8 @@ class $d067581fc0d59830$export$2630dac655fddcab extends (0, $ab210b2da7b39b9d$ex
 
 
 console.info(`%c \u{1FAB4} ${(0, $3cb55e3e7ebd776a$export$112ee299e69fdf7)} \u{1FAB4} %c ${(0, $3cb55e3e7ebd776a$export$d5e7ce6d07daf10f)} \n%c  By @${(0, $3cb55e3e7ebd776a$export$6af2e7fd4d06fd68)}`, "color: green; background: white; font-weight: bold; border: solid 1px green; border-radius: 4px 0 0 4px", "color: white; background: green; font-weight: bold; border: solid 1px green; border-radius:  0 4px 4px 0", "color: green;");
-customElements.define(`${(0, $3cb55e3e7ebd776a$export$31089ea8b3e502e3)}-editor`, (0, $d067581fc0d59830$export$2630dac655fddcab));
-customElements.define((0, $3cb55e3e7ebd776a$export$31089ea8b3e502e3), (0, $a399cc6bbb0eb26a$export$ca6a74221cf9b5c5));
+customElements.define(`${(0, $3cb55e3e7ebd776a$export$31089ea8b3e502e3)}-editor`, (0, $d067581fc0d59830$export$22bae9358daff77d));
+customElements.define((0, $3cb55e3e7ebd776a$export$31089ea8b3e502e3), (0, $a399cc6bbb0eb26a$export$5cbd5455d3b33941));
 // Register for the visual selection in the UI
 window.customCards = window.customCards || [];
 window.customCards.push({
