@@ -1,6 +1,6 @@
 {
     "name": "simple-plant-extended-card",
-    "version": "1.2.3",
+    "version": "1.0.0",
     "source": "src/simple-plant-extended.ts",
     "module": "dist/simple-plant-extended-card.js",
     "scripts": {
