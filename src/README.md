@@ -1,6 +1,6 @@
 # Source code documentation
 
-This file adds additionnal documentation to the source code of `simple-plant-card``
+This file adds additional documentation to the source code of `simple-plant-extended-card`.
 
 ## Files
 
@@ -8,11 +8,11 @@ This folder contains the following files
 
 | path             | description                                    |
 | ---------------- | ---------------------------------------------- |
-| bundle-test.d.ts | Typescripts types for bundle (used in card.ts) |
+| bundle-test.d.ts | Typescript types for bundle (used in card.ts)  |
 | card.ts          | Card behavior, as shown in a dashboard         |
-| config.ts        | Card config, shown when adding a card          |
+| editor.ts        | Card config UI shown in the editor             |
 | consts.ts        | Define common constants                        |
+| helpers.ts       | Date helpers and Home Assistant typings        |
 | README.md        | This file, source code documentation           |
-| simple-plant.ts  | Main file, registers the plugin                |
-| styles.css       | Define the card styles                         |
-| template.html    | Define the HTML template used by card.js       |
+| simple-plant-extended.ts | Main file, registers the plugin         |
+| styles.ts        | Define the card styles                         |

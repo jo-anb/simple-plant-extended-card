@@ -1,5 +1,5 @@
 import { HassEntity } from "home-assistant-js-websocket";
-import { HomeAssistant, LovelaceCardConfig } from "custom-card-helpers";``
+import { HomeAssistant, LovelaceCardConfig } from "custom-card-helpers";
 
 
 //---- TYPES ----

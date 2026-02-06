@@ -636,6 +636,18 @@ const $13632afec4749c69$export$9dd6ff9ea0189349 = (0, $def2de46b9306e8a$export$d
         padding: 16px;
     }
 
+    .title-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    .activity-button {
+        margin-top: 8px;
+        position: static;
+    }
+
     .row {
         display: flex;
         flex-direction: row;
@@ -651,6 +663,34 @@ const $13632afec4749c69$export$9dd6ff9ea0189349 = (0, $def2de46b9306e8a$export$d
     .content {
         position: relative;
         overflow: hidden;
+    }
+
+    .mark-action-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+    }
+
+    .mark-action {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        padding: 2px;
+        border: 1px solid var(--divider-color);
+        background: rgba(var(--rgb-card-background-color), 0.2);
+        color: var(--secondary-text-color);
+    }
+
+    .mark-action.is-due {
+        color: var(--warning-color);
+        border-color: rgba(var(--rgb-warning-color, 255, 193, 7), 0.6);
+        background: rgba(var(--rgb-warning-color, 255, 193, 7), 0.15);
+    }
+
+    .mark-action.is-done {
+        opacity: 0.75;
     }
 
     .content p {
@@ -679,7 +719,51 @@ const $13632afec4749c69$export$9dd6ff9ea0189349 = (0, $def2de46b9306e8a$export$d
         flex-direction: row;
         align-items: center;
         justify-content: flex-start;
-        gap: 4px;
+        gap: 0px;
+    }
+
+    .right-actions {
+        margin-left: auto;
+        justify-content: flex-end;
+        align-self: center;
+        display: flex;
+        align-items: center;
+        gap: 0px;
+    }
+
+    .right-actions sub-icon-content {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .right-align {
+        margin-left: auto;
+        justify-content: flex-end;
+    }
+
+    .status-pill {
+        font-size: 11px;
+        padding: 2px 8px;
+        border-radius: 999px;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+        background: var(--secondary-background-color);
+        color: var(--secondary-text-color);
+        border: 1px solid var(--divider-color);
+    }
+
+    .status-pill.is-on {
+        background: rgba(var(--rgb-primary-color), 0.12);
+        color: var(--primary-color);
+        border-color: rgba(var(--rgb-primary-color), 0.35);
+    }
+
+    .status-pill.is-off {
+        opacity: 0.6;
+    }
+
+    .status-off {
+        opacity: 0.7;
     }
 
     .sub {
@@ -709,6 +793,346 @@ const $13632afec4749c69$export$9dd6ff9ea0189349 = (0, $def2de46b9306e8a$export$d
         -webkit-box-orient: vertical;
     }
 
+    .section-title {
+        padding: 12px 0 8px;
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    .overview-title {
+        font-size: clamp(12px, 2.2vw, 16px);
+    }
+
+    .overview-summary {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 8px;
+    }
+
+    .overview-total-pill {
+        cursor: pointer;
+        background: var(--secondary-background-color);
+    }
+
+    .overview-task-pills {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 8px;
+    }
+
+    .overview-task-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--divider-color);
+        background: var(--secondary-background-color);
+        color: var(--primary-text-color);
+        font-size: clamp(10px, 1.8vw, 12px);
+        cursor: pointer;
+    }
+
+    .overview-subtitle {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: clamp(10px, 1.8vw, 12px);
+        color: var(--secondary-text-color);
+    }
+
+    .overview-subtitle-text {
+        white-space: nowrap;
+    }
+
+    .overview-subtitle-line {
+        flex: 1;
+        height: 1px;
+        background: var(--divider-color);
+    }
+
+    .overview-task-pill:hover {
+        border-color: rgba(var(--rgb-primary-color), 0.45);
+        background: rgba(var(--rgb-primary-color), 0.12);
+    }
+
+    .overview-task-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .overview-task-count {
+        font-weight: 600;
+    }
+
+    .details-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        padding-bottom: 12px;
+    }
+
+    .detail-item {
+        padding: 8px;
+        border-radius: 8px;
+        background: var(--secondary-background-color);
+    }
+
+    .detail-label {
+        font-size: 11px;
+        color: var(--secondary-text-color);
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+    }
+
+    .detail-value {
+        font-size: 13px;
+        margin-top: 4px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .detail-value-editable {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .detail-edit-icon {
+        width: 14px;
+        height: 14px;
+        color: var(--secondary-text-color);
+    }
+
+    .activity-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 8px 0 16px;
+        max-height: 380px;
+        overflow: auto;
+    }
+
+    .activity-item {
+        border-left: 2px solid var(--divider-color);
+        padding-left: 12px;
+    }
+
+    .activity-time {
+        font-size: 11px;
+        color: var(--secondary-text-color);
+        margin-bottom: 4px;
+    }
+
+    .activity-action {
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: capitalize;
+    }
+
+    .activity-note,
+    .activity-change {
+        font-size: 12px;
+        color: var(--secondary-text-color);
+    }
+
+    .activity-empty {
+        font-size: 12px;
+        color: var(--secondary-text-color);
+    }
+
+    .notes-row {
+        cursor: pointer;
+        gap: 12px;
+    }
+
+    .notes-preview {
+        font-size: 12px;
+        color: var(--secondary-text-color);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .notes-input {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        padding-top: 8px;
+    }
+
+    .notes-input ha-textfield {
+        flex: 1;
+    }
+
+    .details-button {
+        width: 100%;
+        margin-top: 12px;
+        --mdc-theme-primary: var(--primary-color);
+    }
+
+    .details-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 4px 0 12px;
+    }
+
+    .details-edit {
+        display: grid;
+        gap: 8px;
+        padding: 4px 0 12px;
+    }
+
+    .details-select-label {
+        font-size: 12px;
+        color: var(--secondary-text-color);
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+    }
+
+    .details-select {
+        padding: 10px 12px;
+        border-radius: 8px;
+        border: 1px solid var(--divider-color);
+        background: var(--secondary-background-color);
+        color: var(--primary-text-color);
+        font-size: 14px;
+    }
+
+    .details-input {
+        padding: 10px 12px;
+        border-radius: 8px;
+        border: 1px solid var(--divider-color);
+        background: var(--secondary-background-color);
+        color: var(--primary-text-color);
+        font-size: 14px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .details-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 8px;
+        border-radius: 8px;
+        background: var(--secondary-background-color);
+    }
+
+    .details-row-label {
+        font-size: 12px;
+        color: var(--secondary-text-color);
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+    }
+
+    .overview-row-label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-transform: none;
+        letter-spacing: 0;
+        font-size: clamp(11px, 2vw, 14px);
+        color: var(--primary-text-color);
+        cursor: pointer;
+    }
+
+    .overview-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .overview-row-main {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .overview-plant-name {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .overview-plant-image {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        object-fit: cover;
+        background: var(--secondary-background-color);
+        border: 1px solid var(--divider-color);
+        flex-shrink: 0;
+    }
+
+    .overview-plant-icon {
+        width: 28px;
+        height: 28px;
+        color: var(--secondary-text-color);
+        flex-shrink: 0;
+    }
+
+    .overview-row-value {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        font-size: clamp(10px, 1.8vw, 12px);
+    }
+
+    .overview-dialog-actions {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 8px;
+    }
+
+    .overview-task-row-label {
+        display: block;
+        font-size: 11px;
+        color: var(--secondary-text-color);
+        text-transform: none;
+        letter-spacing: 0;
+        margin-top: 2px;
+    }
+
+    .overview-task-action {
+        margin-left: 4px;
+    }
+
+    .details-row-value {
+        font-size: 13px;
+        text-align: right;
+    }
+
+    .detail-clickable {
+        cursor: pointer;
+    }
+
+    .confirm-body {
+        padding: 4px 0 12px;
+        color: var(--secondary-text-color);
+        font-size: 14px;
+    }
+
+    .confirm-actions {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding-top: 8px;
+    }
+
+    .confirm-button {
+        flex: 1;
+    }
+
+    .confirm-button.primary {
+        --mdc-theme-primary: var(--primary-color);
+    }
+
     hui-image {
         aspect-ratio: 1 / 1;
         border-radius: var(--ha-card-border-radius,12px);
@@ -726,13 +1150,42 @@ const $13632afec4749c69$export$9dd6ff9ea0189349 = (0, $def2de46b9306e8a$export$d
         position: relative;
     }
 
+    .action-icon {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: var(--secondary-background-color);
+        border: 1px solid var(--divider-color);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2px;
+    }
+
+    .action-icon.clickable:hover {
+        background: rgba(var(--rgb-primary-color), 0.18);
+        border-color: rgba(var(--rgb-primary-color), 0.45);
+    }
+
+    .action-icon {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: var(--secondary-background-color);
+        border: 1px solid var(--divider-color);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2px;
+    }
+
     ha-icon[data-color] {
         color: var(--color);
     }
 
 
 
-    ha-icon-button {
+    .floating-icon-button {
         position: absolute;
         bottom: 8px;
         right: 8px;
@@ -740,10 +1193,16 @@ const $13632afec4749c69$export$9dd6ff9ea0189349 = (0, $def2de46b9306e8a$export$d
         border-radius: 48px;
     }
 
+    ha-icon-button,
+    mwc-button,
+    .clickable {
+        cursor: pointer;
+    }
+
     ha-icon-button ha-icon::after {
         content: attr(data-days, "");
         position: absolute;
-        top: calc( 50% + 1px );
+        top: calc( 50% + 5px );
         left: 0px;
         transform: translateY(-50%);
         width: 100%;
@@ -753,15 +1212,17 @@ const $13632afec4749c69$export$9dd6ff9ea0189349 = (0, $def2de46b9306e8a$export$d
     .sub_icon {
         width: 28px;
         height: 28px;
+        display: block !important;
     }
     sub-icon-content ha-icon::after {
         content: attr(data-days, "");
         position: absolute;
-        top: calc( 50% + 1px );
-        left: 8px;
+        top: calc( 50% - 2px );
+        left: -2px;
         transform: translateY(-50%);
         width: 100%;
         font-size: 8px;
+        text-align: center;
     }
     .sub_icon_button {
         // display: block;
@@ -774,8 +1235,9 @@ const $13632afec4749c69$export$9dd6ff9ea0189349 = (0, $def2de46b9306e8a$export$d
     }
     .repeat_icon {
         color: var(--secondary-text-color);
-        width: 34px;
-        height: 34px;
+        width: 28px;
+        height: 28px;
+        display: block !important;
     }
 `;
 
@@ -832,6 +1294,7 @@ class $a399cc6bbb0eb26a$export$5cbd5455d3b33941 extends (0, $ab210b2da7b39b9d$ex
             "problem",
             "last_watered",
             "picture",
+            "status",
             "days_between_waterings",
             "health",
             "next_watering",
@@ -856,12 +1319,24 @@ class $a399cc6bbb0eb26a$export$5cbd5455d3b33941 extends (0, $ab210b2da7b39b9d$ex
             "mark_misted",
             "mark_cleaned",
             "last_misted",
-            "last_cleaned"
+            "last_cleaned",
+            "current_humidity",
+            "current_temperature",
+            "current_light",
+            "size",
+            "location",
+            "soil_type",
+            "distance_to_window",
+            "pot_diameter",
+            "species",
+            "notes",
+            "plant_age_days"
         ];
     }
     set hass(hass) {
         // Triggered everytime a state change and more
         this._hass = hass;
+        if (this._plant_card_el) this._plant_card_el.hass = hass;
         this._update_entites();
     }
     static{
@@ -873,6 +1348,82 @@ class $a399cc6bbb0eb26a$export$5cbd5455d3b33941 extends (0, $ab210b2da7b39b9d$ex
             },
             _translations_loaded: {
                 type: Boolean,
+                state: true
+            },
+            _activity_dialog_open: {
+                type: Boolean,
+                state: true
+            },
+            _notes_dialog_open: {
+                type: Boolean,
+                state: true
+            },
+            _new_note: {
+                type: String,
+                state: true
+            },
+            _confirm_dialog_open: {
+                type: Boolean,
+                state: true
+            },
+            _confirm_action: {
+                type: String,
+                state: true
+            },
+            _confirm_message: {
+                type: String,
+                state: true
+            },
+            _details_dialog_open: {
+                type: Boolean,
+                state: true
+            },
+            _edit_acquisition_date: {
+                type: String,
+                state: true
+            },
+            _edit_distance_to_window: {
+                type: String,
+                state: true
+            },
+            _edit_pot_diameter: {
+                type: String,
+                state: true
+            },
+            _edit_humidity_sensor: {
+                type: String,
+                state: true
+            },
+            _edit_temperature_sensor: {
+                type: String,
+                state: true
+            },
+            _edit_light_sensor: {
+                type: String,
+                state: true
+            },
+            _overview_task_dialog_open: {
+                type: Boolean,
+                state: true
+            },
+            _overview_task_type: {
+                type: String,
+                state: true
+            },
+            _overview_task_title: {
+                type: String,
+                state: true
+            },
+            _overview_task_items: {
+                type: Array,
+                state: true
+            },
+            _plant_dialog_open: {
+                type: Boolean,
+                state: true
+            },
+            _plant_dialog_device: {
+                type: String,
                 state: true
             },
             _states_updated: {
@@ -890,8 +1441,19 @@ class $a399cc6bbb0eb26a$export$5cbd5455d3b33941 extends (0, $ab210b2da7b39b9d$ex
     }
     setConfig(config) {
         // Triggers everytime the config of the card change
-        if (!config.device) throw new Error("You need to define a name");
-        this._device_id = config.device;
+        if (!config.device && config.mode !== "overview") throw new Error("You need to define a name");
+        const merged = {
+            mode: "device",
+            overview_filter: "overdue",
+            show_misting: true,
+            show_cleaning: true,
+            show_activity: true,
+            show_details: true,
+            show_notes: true,
+            ...config
+        };
+        this._config = merged;
+        this._device_id = merged.device;
         // while editing the entity in the card editor
         if (this._hass) this.hass = this._hass;
         this._config_updated = true;
@@ -911,8 +1473,93 @@ class $a399cc6bbb0eb26a$export$5cbd5455d3b33941 extends (0, $ab210b2da7b39b9d$ex
         window.history.pushState(null, "", `/config/devices/device/${deviceId}`);
         window.dispatchEvent(new Event("location-changed"));
     }
+    _openActivityDialog() {
+        this._activity_dialog_open = true;
+    }
+    _closeActivityDialog() {
+        this._activity_dialog_open = false;
+    }
+    _openNotesDialog() {
+        this._notes_dialog_open = true;
+    }
+    _closeNotesDialog() {
+        this._notes_dialog_open = false;
+        this._new_note = "";
+    }
+    _openConfirm(action) {
+        this._confirm_action = action;
+        this._confirm_message = this._buildConfirmMessage(action);
+        this._confirm_dialog_open = true;
+    }
+    _buildConfirmMessage(action) {
+        const plant = this._device_name || "";
+        const actionLabelMap = {
+            water: this._translations["action_water"] || "watered",
+            feed: this._translations["action_feed"] || "fertilized",
+            mist: this._translations["action_mist"] || "misted",
+            clean: this._translations["action_clean"] || "cleaned"
+        };
+        const actionLabel = actionLabelMap[action] || action;
+        return `${plant} ${this._translations["confirm_mark"] || "mark as"} ${actionLabel}`;
+    }
+    _closeConfirm() {
+        this._confirm_dialog_open = false;
+        this._confirm_action = null;
+        this._confirm_message = "";
+    }
+    _openDetailsDialog() {
+        const getAttr = (key, attr)=>this._entity_states.get(key)?.attributes?.[attr];
+        const getState = (key)=>this._entity_states.get(key)?.state;
+        this._edit_acquisition_date = getAttr("status", "acquisition_date") || "";
+        this._edit_distance_to_window = getState("distance_to_window") || "";
+        this._edit_pot_diameter = getState("pot_diameter") || "";
+        this._edit_humidity_sensor = getAttr("status", "humidity_sensor") || "";
+        this._edit_temperature_sensor = getAttr("status", "temperature_sensor") || "";
+        this._edit_light_sensor = getAttr("status", "light_sensor") || "";
+        this._details_dialog_open = true;
+    }
+    _closeDetailsDialog() {
+        this._details_dialog_open = false;
+    }
+    _updateConfigField(field, value) {
+        const entityId = this._entity_ids["status"] || this._entity_ids["notes"];
+        const payload = {
+            device_id: this._device_id,
+            [field]: value
+        };
+        if (entityId) payload.entity_id = entityId;
+        this._hass.callService("simple_plant_extended", "update_config", payload);
+    }
+    _updateNumberField(key, value) {
+        const entityId = this._entity_ids[key];
+        if (!entityId) return;
+        const parsed = parseFloat(value);
+        if (Number.isNaN(parsed)) return;
+        this._hass.callService("number", "set_value", {
+            entity_id: entityId,
+            value: parsed
+        });
+    }
+    _confirmProceed() {
+        if (this._confirm_action) this._handleButton(this._confirm_action);
+        this._closeConfirm();
+    }
+    _updateNewNote(ev) {
+        this._new_note = ev.target.value;
+    }
+    async _addNote() {
+        const note = this._new_note.trim();
+        if (!note) return;
+        this._hass.callService("simple_plant_extended", "add_note", {
+            entity_id: this._entity_ids["notes"],
+            note: note
+        });
+        this._new_note = "";
+    }
     // Create card and its content
     render() {
+        const mode = this._config?.mode ?? "device";
+        if (mode === "overview") return this._renderOverview();
         if (this._config_updated) {
             // Re fetching device specific information
             this._get_friendly_name();
@@ -926,6 +1573,51 @@ class $a399cc6bbb0eb26a$export$5cbd5455d3b33941 extends (0, $ab210b2da7b39b9d$ex
         // compute strings
         const local = this._hass.language;
         const today = this._translations["today"];
+        const show_misting = this._config?.show_misting ?? true;
+        const show_cleaning = this._config?.show_cleaning ?? true;
+        const show_activity = this._config?.show_activity ?? true;
+        const show_details = this._config?.show_details ?? true;
+        const show_notes = this._config?.show_notes ?? true;
+        const getEntity = (key)=>this._entity_states.get(key);
+        const normalize = (value)=>{
+            if (!value || value === "unknown" || value === "unavailable") return "";
+            return value;
+        };
+        const getState = (key)=>normalize(getEntity(key)?.state);
+        const getAttr = (key, attr)=>getEntity(key)?.attributes?.[attr];
+        const getStatusAttr = (attr)=>getAttr("status", attr);
+        const titleCase = (value)=>value.replace(/_/g, " ").replace(/\b\w/g, (char)=>char.toUpperCase());
+        const localizeSelectState = (key, value)=>{
+            const translationKey = `component.${(0, $3cb55e3e7ebd776a$export$a970e6ec17c9a61d)}.entity.select.${key}.state.${value}`;
+            const localized = this._hass.localize(translationKey);
+            if (!localized || localized === translationKey) return titleCase(value);
+            return localized;
+        };
+        const localizeEntityName = (domain, key, fallback)=>{
+            const translationKey = `component.${(0, $3cb55e3e7ebd776a$export$a970e6ec17c9a61d)}.entity.${domain}.${key}.name`;
+            const localized = this._hass.localize(translationKey);
+            if (!localized || localized === translationKey) return fallback;
+            return localized;
+        };
+        const localizeConfigLabel = (key, fallback)=>{
+            const configKey = `component.${(0, $3cb55e3e7ebd776a$export$a970e6ec17c9a61d)}.config.step.user.data.${key}`;
+            const optionsKey = `component.${(0, $3cb55e3e7ebd776a$export$a970e6ec17c9a61d)}.options.step.plant.data.${key}`;
+            const configLocalized = this._hass.localize(configKey);
+            if (configLocalized && configLocalized !== configKey) return configLocalized;
+            const optionsLocalized = this._hass.localize(optionsKey);
+            if (optionsLocalized && optionsLocalized !== optionsKey) return optionsLocalized;
+            return fallback;
+        };
+        const formatAge = (daysValue)=>{
+            const days = parseInt(daysValue, 10);
+            if (Number.isNaN(days) || days < 0) return "";
+            const years = Math.floor(days / 365);
+            const months = Math.floor(days % 365 / 30);
+            const parts = [];
+            if (years > 0) parts.push(`${years}y`);
+            parts.push(`${months}m`);
+            return parts.join(" ");
+        };
         //HEALTH Constants
         const health_key_prefix = "component.simple_plant_extended.entity.select.health.state";
         const health_key = `${health_key_prefix}.${this._entity_states.get("health").state}`;
@@ -942,7 +1634,8 @@ class $a399cc6bbb0eb26a$export$5cbd5455d3b33941 extends (0, $ab210b2da7b39b9d$ex
         //FEED Constants
         const next_feed_date = this._entity_states.get("next_fertilization").state;
         const late_feed = this._entity_states.get("fertilization_problem").state === "on";
-        const feed_method = String(this._entity_states.get("feed_method").state).charAt(0).toUpperCase() + String(this._entity_states.get("feed_method").state).slice(1);
+        const feed_method_state = String(this._entity_states.get("feed_method").state);
+        const feed_method = localizeSelectState("feed_method", feed_method_state);
         const feed_interval = this._entity_states.get("days_between_fertilizations").state;
         const feed_icon_color = this._entity_states.get("next_fertilization").attributes.color;
         const days_until_feed = (0, $feccc7a5980a21d5$export$416492d1a5f46c79)(new Date(), next_feed_date);
@@ -952,6 +1645,12 @@ class $a399cc6bbb0eb26a$export$5cbd5455d3b33941 extends (0, $ab210b2da7b39b9d$ex
         const next_mist_date = this._entity_states.get("next_misting").state;
         const mist = this._entity_states.get("misting_enabled").state;
         const clean = this._entity_states.get("cleaning_enabled").state;
+        const mist_label = localizeEntityName("select", "misting_enabled", "Mist");
+        const clean_label = localizeEntityName("select", "cleaning_enabled", "Clean");
+        const mist_state_label = localizeSelectState("misting_enabled", String(mist));
+        const clean_state_label = localizeSelectState("cleaning_enabled", String(clean));
+        const mist_enabled = String(mist) === "on";
+        const clean_enabled = String(clean) === "on";
         const care_mist_class = mist == 'on' ? "" : "hidden";
         const care_clean_class = clean == 'on' ? "" : "hidden";
         const mist_interval = parseInt(this._entity_states.get("days_between_mistings").state);
@@ -972,6 +1671,134 @@ class $a399cc6bbb0eb26a$export$5cbd5455d3b33941 extends (0, $ab210b2da7b39b9d$ex
         const light = this._hass.localize(light_key);
         const light_color = light_state === "sunny" ? "gold" : light_state === "partly_sunny" ? "darkgoldenrod" : "dimgrey";
         const light_icon = light_state == 'sunny' ? "mdi:white-balance-sunny" : light_state == 'partly_sunny' ? "mdi:weather-partly-cloudy" : light_state == 'shade' ? "mdi:weather-cloudy" : "mdi:theme-light-dark";
+        const activityLog = getEntity("status")?.attributes?.activity_log;
+        const activityItems = Array.isArray(activityLog) ? activityLog : [];
+        const formatAction = (action)=>action.replace(/_/g, " ");
+        const notesLog = getEntity("status")?.attributes?.notes_log;
+        const notesItems = Array.isArray(notesLog) ? notesLog : [];
+        const currentHumidity = this._edit_humidity_sensor || "";
+        const currentTemperature = this._edit_temperature_sensor || "";
+        const currentLight = this._edit_light_sensor || "";
+        const otherHumiditySensors = new Set([
+            currentTemperature,
+            currentLight
+        ].filter((value)=>Boolean(value)));
+        const otherTemperatureSensors = new Set([
+            currentHumidity,
+            currentLight
+        ].filter((value)=>Boolean(value)));
+        const otherLightSensors = new Set([
+            currentHumidity,
+            currentTemperature
+        ].filter((value)=>Boolean(value)));
+        const sensorStates = Object.values(this._hass.states || {}).filter((state)=>state?.entity_id?.startsWith("sensor."));
+        const toOption = (state)=>({
+                id: state.entity_id,
+                name: state.attributes?.friendly_name || state.entity_id
+            });
+        const sensorOptionsHumidity = sensorStates.filter((state)=>state.attributes?.device_class === "humidity").filter((state)=>!otherHumiditySensors.has(state.entity_id)).map(toOption).sort((a, b)=>a.name.localeCompare(b.name));
+        const sensorOptionsTemperature = sensorStates.filter((state)=>state.attributes?.device_class === "temperature").filter((state)=>!otherTemperatureSensors.has(state.entity_id)).map(toOption).sort((a, b)=>a.name.localeCompare(b.name));
+        const sensorOptionsLight = sensorStates.filter((state)=>state.attributes?.device_class === "illuminance").filter((state)=>!otherLightSensors.has(state.entity_id)).map(toOption).sort((a, b)=>a.name.localeCompare(b.name));
+        const notSetLabel = this._translations["not_set"] || "\u2014";
+        const detailItems = [
+            {
+                label: localizeEntityName("text", "species", "Species"),
+                key: "species",
+                value: getState("species"),
+                type: "readonly"
+            },
+            {
+                label: localizeEntityName("select", "size", "Size"),
+                key: "size",
+                value: getState("size") ? localizeSelectState("size", getState("size")) : "",
+                type: "editable"
+            },
+            {
+                label: localizeEntityName("select", "location", "Location"),
+                key: "location",
+                value: getState("location") ? localizeSelectState("location", getState("location")) : "",
+                type: "editable"
+            },
+            {
+                label: localizeEntityName("select", "soil_type", "Soil"),
+                key: "soil_type",
+                value: getState("soil_type") ? localizeSelectState("soil_type", getState("soil_type")) : "",
+                type: "editable"
+            },
+            {
+                label: localizeEntityName("number", "distance_to_window", "Distance"),
+                key: "distance_to_window",
+                value: getState("distance_to_window"),
+                unit: getAttr("distance_to_window", "unit_of_measurement"),
+                type: "editable"
+            },
+            {
+                label: localizeEntityName("number", "pot_diameter", "Pot"),
+                key: "pot_diameter",
+                value: getState("pot_diameter"),
+                unit: getAttr("pot_diameter", "unit_of_measurement"),
+                type: "editable"
+            },
+            {
+                label: localizeEntityName("sensor", "current_humidity", "Humidity"),
+                key: "current_humidity",
+                value: getState("current_humidity"),
+                unit: getAttr("current_humidity", "unit_of_measurement"),
+                type: "readonly"
+            },
+            {
+                label: localizeEntityName("sensor", "current_temperature", "Temperature"),
+                key: "current_temperature",
+                value: getState("current_temperature"),
+                unit: getAttr("current_temperature", "unit_of_measurement"),
+                type: "readonly"
+            },
+            {
+                label: localizeEntityName("sensor", "current_light", "Light"),
+                key: "current_light",
+                value: getState("current_light"),
+                unit: getAttr("current_light", "unit_of_measurement"),
+                type: "readonly"
+            },
+            {
+                label: localizeEntityName("sensor", "plant_age_days", "Age"),
+                key: "plant_age_days",
+                value: formatAge(getState("plant_age_days")),
+                type: "readonly"
+            }
+        ].filter((item)=>item.value);
+        const detailItemsAll = [
+            {
+                label: localizeEntityName("text", "species", "Species"),
+                key: "species",
+                value: getState("species"),
+                type: "readonly"
+            },
+            {
+                label: localizeEntityName("text", "notes", "Notes"),
+                key: "notes",
+                value: getState("notes"),
+                type: "editable"
+            },
+            {
+                label: localizeEntityName("select", "size", "Size"),
+                key: "size",
+                value: getState("size") ? localizeSelectState("size", getState("size")) : "",
+                type: "editable"
+            },
+            {
+                label: localizeEntityName("select", "location", "Location"),
+                key: "location",
+                value: getState("location") ? localizeSelectState("location", getState("location")) : "",
+                type: "editable"
+            },
+            {
+                label: localizeEntityName("select", "soil_type", "Soil"),
+                key: "soil_type",
+                value: getState("soil_type") ? localizeSelectState("soil_type", getState("soil_type")) : "",
+                type: "editable"
+            }
+        ];
         // return card
         return (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`
             <ha-card>
@@ -983,7 +1810,7 @@ class $a399cc6bbb0eb26a$export$5cbd5455d3b33941 extends (0, $ab210b2da7b39b9d$ex
                             .fitMode=${"cover"}
                             @click="${()=>this._moreInfo("picture")}"
                         ></hui-image>
-                        <ha-icon-button
+                        <ha-icon-button class="floating-icon-button"
                             .label=${days_between_label}
                             @click="${()=>this._moreInfo("days_between_waterings")}"
                         >
@@ -993,60 +1820,69 @@ class $a399cc6bbb0eb26a$export$5cbd5455d3b33941 extends (0, $ab210b2da7b39b9d$ex
                         </ha-icon-button>
                     </div>
                     <div class="info">
-                        <h1 @click="${()=>this._navigateToDevice(this._device_id)}">
-                            ${this._device_name}
-                        </h1>
+                        <div class="title-row">
+                            <h1 @click="${()=>this._navigateToDevice(this._device_id)}">
+                                ${this._device_name}
+                            </h1>
+                            ${show_activity ? (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`
+                                <ha-icon-button class="activity-button" @click="${()=>this._openActivityDialog()}">
+                                    <ha-icon .icon=${"mdi:timeline"}></ha-icon>
+                                </ha-icon-button>
+                            ` : (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)``}
+                        </div>
                         <div class="border_row">
                             <div class="row sub_content water_info">
-                                <ha-icon 
-                                    data-color
-                                    style="--color: ${watering_can_color};"
-                                    .icon=${"mdi:watering-can"}></ha-icon>
+                                <span class="action-icon clickable" @click=${()=>this._openConfirm("water")}>
+                                    <ha-icon
+                                        data-color
+                                        style="--color: ${watering_can_color};"
+                                        .icon=${"mdi:watering-can"}
+                                    ></ha-icon>
+                                </span>
                                 <div class="grow">
                                     <div class="content">
-                                        <p class="">Watering</p>
+                                        <p class="">${this._translations["watering"] || "Watering"}</p>
                                     </div>
+                                </div>
+                                <div class="right-actions">
                                     <sub-icon-content>
-                                        <ha-icon class="sub_icon repeat_icon sub_icon_button" @click="${()=>this._moreInfo("days_between_waterings")}"
-                                            data-days="${parseInt(days_between_value)}"
+                                        <ha-icon class="sub_icon repeat_icon sub_icon_button" @click="${()=>this._moreInfo("days_between_waterings")}" 
+                                            data-days="${String(days_between_value)}"
                                             .icon=${"mdi:repeat"}>
                                         </ha-icon>
                                     </sub-icon-content>
-                                </div>
-                                <sub-icon-content>
-                                    <ha-icon class="sub_icon"
-                                        data-color
-                                        style="--color: ${watering_can_color};"
-                                        data-days="${late ? 0 - days_until_watering : days_until_watering}"
-                                        .icon=${"mdi:calendar-blank"}>
-                                    </ha-icon>
-                                </sub-icon-content>
-                                <div class="content" @click="${()=>this._handleButton("water")}">
-                                    <ha-icon class="sub_icon_button sub_icon "
-                                        data-color
-                                        style="--color: ${water_todo ? "goldenrod" : "dimgray"};" 
-                                        .icon=${water_todo ? "mdi:checkbox-blank-outline" : "mdi:checkbox-marked"}></ha-icon>
+                                    <sub-icon-content>
+                                        <ha-icon class="sub_icon"
+                                            data-color
+                                            style="--color: ${watering_can_color};"
+                                            data-days="${late ? 0 - days_until_watering : days_until_watering}"
+                                            .icon=${"mdi:calendar-blank"}>
+                                        </ha-icon>
+                                    </sub-icon-content>
                                 </div>
                             </div>
 
 
                             <div class="row sub_content feed_info">
-                                <ha-icon 
-                                    data-color
-                                    style="--color: ${feed_icon_color};"
-                                    .icon=${"mdi:seed"}></ha-icon>
+                                <span class="action-icon clickable" @click=${()=>this._openConfirm("feed")}>
+                                    <ha-icon
+                                        data-color
+                                        style="--color: ${feed_icon_color};"
+                                        .icon=${"mdi:seed"}
+                                    ></ha-icon>
+                                </span>
                                 <div class="grow">
                                     <div class="content" @click="${()=>this._moreInfo("feed_method")}">
                                         <p class=" sub_icon_button">${feed_method}</p>
                                     </div>
+                                </div>
+                                <div class="sub_content_conditional right-actions">
                                     <sub-icon-content>
-                                        <ha-icon class="sub_icon repeat_icon sub_icon_button" @click="${()=>this._moreInfo("days_between_fertilizations")}"
+                                        <ha-icon class="sub_icon repeat_icon sub_icon_button" @click="${()=>this._moreInfo("days_between_fertilizations")}" 
                                             data-days="${parseInt(feed_interval)}"
                                             .icon=${"mdi:repeat"}>
                                         </ha-icon>
                                     </sub-icon-content>
-                                </div>
-                                <div class="sub_content_conditional ">
                                     <sub-icon-content>
                                         <ha-icon class="sub_icon"
                                             data-color
@@ -1055,32 +1891,33 @@ class $a399cc6bbb0eb26a$export$5cbd5455d3b33941 extends (0, $ab210b2da7b39b9d$ex
                                             .icon=${"mdi:calendar-blank"}>
                                         </ha-icon>
                                     </sub-icon-content>
-                                    <div class="content" @click="${()=>this._handleButton("feed")}">
-                                        <ha-icon class="sub_icon_button sub_icon " 
-                                            data-color
-                                            style="--color: ${feed_todo ? "goldenrod" : "dimgray"};" 
-                                            .icon=${feed_todo ? "mdi:checkbox-blank-outline" : "mdi:checkbox-marked"}></ha-icon>
-                                    </div>
                                 </div>
                             </div>
 
-                            <div class="row sub_content mist_info">
-                                <ha-icon class="" 
-                                    .icon=${"mdi:spray-bottle"}
-                                    data-color
-                                    style="--color: ${mist_icon_color};"></ha-icon>
+                            ${show_misting ? (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`
+                            <div class="row sub_content mist_info ${mist_enabled ? "status-on" : "status-off"}">
+                                <span class="action-icon clickable" @click=${()=>this._openConfirm("mist")}>
+                                    <ha-icon
+                                        .icon=${"mdi:spray-bottle"}
+                                        data-color
+                                        style="--color: ${mist_icon_color};"
+                                    ></ha-icon>
+                                </span>
                                 <div class="grow">
                                     <div class="content sub_icon_button" @click="${()=>this._moreInfo("misting_enabled")}">
-                                        <p class="">Mist ${String(mist).charAt(0).toUpperCase() + String(mist).slice(1)}</p>
+                                        <p class="">${mist_label}</p>
                                     </div>
-                                    <sub-icon-content class="${care_mist_class}" @click="${()=>this._moreInfo("days_between_mistings")}">
+                                    <span class="status-pill ${mist_enabled ? "is-on" : "is-off"}">
+                                        ${mist_state_label}
+                                    </span>
+                                </div>
+                                <div class="sub_content_conditional ${care_mist_class} right-actions">
+                                    <sub-icon-content @click="${()=>this._moreInfo("days_between_mistings")}">
                                         <ha-icon class="sub_icon repeat_icon sub_icon_button"
                                             data-days="${late_mist ? 0 - mist_interval : mist_interval}"
                                             .icon=${"mdi:repeat"}>
                                         </ha-icon>
                                     </sub-icon-content>
-                                </div>
-                                <div class="sub_content_conditional ${care_mist_class}">
                                     <sub-icon-content>
                                         <ha-icon class="sub_icon"
                                             data-color
@@ -1089,32 +1926,34 @@ class $a399cc6bbb0eb26a$export$5cbd5455d3b33941 extends (0, $ab210b2da7b39b9d$ex
                                             .icon=${"mdi:calendar-blank"}>
                                         </ha-icon>
                                     </sub-icon-content>
-                                    <div class="content" @click="${()=>this._handleButton("mist")}">
-                                        <ha-icon class="sub_icon_button sub_icon "
-                                            data-color
-                                            style="--color: ${mist_todo ? "goldenrod" : "dimgray"};" 
-                                            .icon=${mist_todo ? "mdi:checkbox-blank-outline" : "mdi:checkbox-marked"}></ha-icon>
-                                    </div>
                                 </div>
                             </div>
+                            ` : (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)``}
 
-                            <div class="row sub_content clean_info">
-                                <ha-icon class="" 
-                                    .icon=${"mdi:liquid-spot"}
-                                    data-color
-                                    style="--color: ${clean_icon_color};"></ha-icon>
+                            ${show_cleaning ? (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`
+                            <div class="row sub_content clean_info ${clean_enabled ? "status-on" : "status-off"}">
+                                <span class="action-icon clickable" @click=${()=>this._openConfirm("clean")}>
+                                    <ha-icon
+                                        .icon=${"mdi:liquid-spot"}
+                                        data-color
+                                        style="--color: ${clean_icon_color};"
+                                    ></ha-icon>
+                                </span>
                                 <div class="grow">
                                     <div class="content sub_icon_button" @click="${()=>this._moreInfo("cleaning_enabled")}">
-                                        <p class="">Clean ${String(clean).charAt(0).toUpperCase() + String(clean).slice(1)}</p>
+                                        <p class="">${clean_label}</p>
                                     </div>
-                                    <sub-icon-content class="${care_clean_class}" @click="${()=>this._moreInfo("days_between_cleanings")}">
+                                    <span class="status-pill ${clean_enabled ? "is-on" : "is-off"}">
+                                        ${clean_state_label}
+                                    </span>
+                                </div>
+                                <div class="sub_content_conditional ${care_clean_class} right-actions">
+                                    <sub-icon-content @click="${()=>this._moreInfo("days_between_cleanings")}">
                                         <ha-icon class="sub_icon repeat_icon sub_icon_button"
                                             data-days="${late_clean ? 0 - clean_interval : clean_interval}"
                                             .icon=${"mdi:repeat"}>
                                         </ha-icon>
                                     </sub-icon-content>
-                                </div>
-                                <div class="sub_content_conditional ${care_clean_class}">
                                     <sub-icon-content >
                                         <ha-icon class="sub_icon"
                                             data-color
@@ -1123,14 +1962,9 @@ class $a399cc6bbb0eb26a$export$5cbd5455d3b33941 extends (0, $ab210b2da7b39b9d$ex
                                             .icon=${"mdi:calendar-blank"}>
                                         </ha-icon>
                                     </sub-icon-content>
-                                    <div class="content" @click="${()=>this._handleButton("clean")}">
-                                        <ha-icon class="sub_icon_button sub_icon " 
-                                            data-color
-                                            style="--color: ${clean_todo ? "goldenrod" : "dimgray"};" 
-                                            .icon=${clean_todo ? "mdi:checkbox-blank-outline" : "mdi:checkbox-marked"}></ha-icon>
-                                    </div>
                                 </div>
                             </div>
+                            ` : (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)``}
                         </div>
                         <div class="border_row">
                             <div class="row">
@@ -1156,10 +1990,577 @@ class $a399cc6bbb0eb26a$export$5cbd5455d3b33941 extends (0, $ab210b2da7b39b9d$ex
                                 </div>
                             </div>
                         </div>
+                        ${show_notes ? (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`
+                        <div class="border_row">
+                            <div class="row notes-row" @click=${this._openNotesDialog}>
+                                <ha-icon .icon=${"mdi:note-text"}></ha-icon>
+                                <div class="content">
+                                    <p>${this._translations["notes"] || "Notes"}</p>
+                                    <div class="notes-preview">
+                                        ${getState("notes") || this._translations["no_notes"] || "No notes"}
+                                    </div>
+                                </div>
+                                <ha-icon class="detail-edit-icon" .icon=${"mdi:chevron-right"}></ha-icon>
+                            </div>
+                        </div>
+                        ` : (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)``}
+                        ${show_details ? (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`
+                        <div class="border_row">
+                            <div class="section-title">${this._translations["details"] || "Details"}</div>
+                            <div class="details-grid">
+                                ${detailItems.map((item)=>(0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`
+                                    <div class="detail-item">
+                                        <div class="detail-label">${item.label}</div>
+                                        <div
+                                            class="detail-value ${item.type === "editable" ? "detail-value-editable" : ""}"
+                                            @click=${()=>item.type === "editable" ? this._moreInfo(item.key) : undefined}
+                                        >
+                                            ${item.value}${item.unit ? ` ${item.unit}` : ""}
+                                            ${item.type === "editable" ? (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`<ha-icon class="detail-edit-icon" .icon=${"mdi:pencil"}></ha-icon>` : (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)``}
+                                        </div>
+                                    </div>
+                                `)}
+                            </div>
+                        </div>
+                        ` : (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)``}
+                        <mwc-button class="details-button" @click=${()=>this._openDetailsDialog()}>
+                            ${this._translations["more_details"] || "More details"}
+                        </mwc-button>
                     </div>
                 </div>
             </ha-card>
+            <ha-dialog .open=${this._activity_dialog_open} @closed=${this._closeActivityDialog}>
+                <div slot="heading">${this._translations["activity"] || "Activity"}</div>
+                <div class="activity-list">
+                    ${activityItems.length ? activityItems.map((item)=>(0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`
+                        <div class="activity-item">
+                            <div class="activity-time">${(0, $feccc7a5980a21d5$export$6270e84457db9b38)(item.timestamp, local, today)}</div>
+                            <div class="activity-action">${formatAction(item.action || "")}</div>
+                            ${item.note ? (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`<div class="activity-note">${item.note}</div>` : (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)``}
+                            ${item.old && item.new ? (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`<div class="activity-change">${item.old} → ${item.new}</div>` : (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)``}
+                        </div>
+                    `) : (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`<div class="activity-empty">${this._translations["no_activity"] || "No activity yet"}</div>`}
+                </div>
+                <mwc-button slot="primaryAction" @click=${this._closeActivityDialog}>
+                    ${this._translations["close"] || "Close"}
+                </mwc-button>
+            </ha-dialog>
+            <ha-dialog .open=${this._notes_dialog_open} @closed=${this._closeNotesDialog}>
+                <div slot="heading">${this._translations["notes"] || "Notes"}</div>
+                <div class="activity-list">
+                    ${notesItems.length ? notesItems.map((item)=>(0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`
+                        <div class="activity-item">
+                            <div class="activity-time">${(0, $feccc7a5980a21d5$export$6270e84457db9b38)(item.timestamp, local, today)}</div>
+                            <div class="activity-note">${item.note}</div>
+                        </div>
+                    `) : (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`<div class="activity-empty">${this._translations["no_notes"] || "No notes"}</div>`}
+                </div>
+                <div class="notes-input">
+                    <ha-textfield
+                        .value=${this._new_note}
+                        .label=${this._translations["add_note"] || "Add note"}
+                        @input=${this._updateNewNote}
+                    ></ha-textfield>
+                    <mwc-button @click=${this._addNote}>${this._translations["add"] || "Add"}</mwc-button>
+                </div>
+                <mwc-button slot="primaryAction" @click=${this._closeNotesDialog}>
+                    ${this._translations["close"] || "Close"}
+                </mwc-button>
+            </ha-dialog>
+            <ha-dialog .open=${this._confirm_dialog_open} @closed=${this._closeConfirm}>
+                <div slot="heading">${this._translations["confirm_title"] || "Confirm"}</div>
+                <div class="confirm-body">${this._confirm_message}</div>
+                <div class="confirm-actions">
+                    <mwc-button class="confirm-button secondary" @click=${this._closeConfirm}>
+                        ${this._translations["cancel"] || "Cancel"}
+                    </mwc-button>
+                    <mwc-button class="confirm-button primary" @click=${this._confirmProceed}>
+                        ${this._translations["confirm"] || "Confirm"}
+                    </mwc-button>
+                </div>
+            </ha-dialog>
+            <ha-dialog .open=${this._details_dialog_open} @closed=${this._closeDetailsDialog}>
+                <div slot="heading">${this._translations["details"] || "Details"}</div>
+                <div class="details-edit">
+                    <label class="details-select-label">
+                        ${localizeConfigLabel("acquisition_date", "Acquisition date")}
+                    </label>
+                    <input
+                        class="details-input"
+                        type="date"
+                        .value=${this._edit_acquisition_date}
+                        @input=${(ev)=>{
+            this._edit_acquisition_date = ev.target.value;
+        }}
+                        @change=${(ev)=>{
+            const value = ev.target.value;
+            this._edit_acquisition_date = value;
+            this._updateConfigField("acquisition_date", value);
+        }}
+                    />
+                    <label class="details-select-label">
+                        ${localizeEntityName("number", "distance_to_window", "Distance")}
+                    </label>
+                    <input
+                        class="details-input"
+                        type="number"
+                        .value=${this._edit_distance_to_window}
+                        @input=${(ev)=>{
+            this._edit_distance_to_window = ev.target.value;
+        }}
+                        @change=${(ev)=>{
+            const value = ev.target.value;
+            this._edit_distance_to_window = value;
+            this._updateNumberField("distance_to_window", value);
+        }}
+                    />
+                    <label class="details-select-label">
+                        ${localizeEntityName("number", "pot_diameter", "Pot")}
+                    </label>
+                    <input
+                        class="details-input"
+                        type="number"
+                        .value=${this._edit_pot_diameter}
+                        @input=${(ev)=>{
+            this._edit_pot_diameter = ev.target.value;
+        }}
+                        @change=${(ev)=>{
+            const value = ev.target.value;
+            this._edit_pot_diameter = value;
+            this._updateNumberField("pot_diameter", value);
+        }}
+                    />
+                    <label class="details-select-label">
+                        ${localizeConfigLabel("humidity_sensor", "Humidity sensor")}
+                    </label>
+                    <select
+                        class="details-select"
+                        .value=${this._edit_humidity_sensor || ""}
+                        @change=${(ev)=>{
+            const value = ev.target.value;
+            this._edit_humidity_sensor = value;
+            this._updateConfigField("humidity_sensor", value);
+        }}
+                    >
+                        <option value="">${notSetLabel}</option>
+                        ${sensorOptionsHumidity.map((opt)=>(0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`
+                            <option value=${opt.id}>${opt.name}</option>
+                        `)}
+                    </select>
+                    <label class="details-select-label">
+                        ${localizeConfigLabel("temperature_sensor", "Temperature sensor")}
+                    </label>
+                    <select
+                        class="details-select"
+                        .value=${this._edit_temperature_sensor || ""}
+                        @change=${(ev)=>{
+            const value = ev.target.value;
+            this._edit_temperature_sensor = value;
+            this._updateConfigField("temperature_sensor", value);
+        }}
+                    >
+                        <option value="">${notSetLabel}</option>
+                        ${sensorOptionsTemperature.map((opt)=>(0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`
+                            <option value=${opt.id}>${opt.name}</option>
+                        `)}
+                    </select>
+                    <label class="details-select-label">
+                        ${localizeConfigLabel("light_sensor", "Light sensor")}
+                    </label>
+                    <select
+                        class="details-select"
+                        .value=${this._edit_light_sensor || ""}
+                        @change=${(ev)=>{
+            const value = ev.target.value;
+            this._edit_light_sensor = value;
+            this._updateConfigField("light_sensor", value);
+        }}
+                    >
+                        <option value="">${notSetLabel}</option>
+                        ${sensorOptionsLight.map((opt)=>(0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`
+                            <option value=${opt.id}>${opt.name}</option>
+                        `)}
+                    </select>
+                </div>
+                <div class="details-list">
+                    ${detailItemsAll.map((item)=>(0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`
+                        <div class="details-row ${item.type === "editable" ? "detail-clickable" : ""}" @click=${()=>item.type === "editable" ? this._moreInfo(item.key) : undefined}>
+                            <div class="details-row-label">${item.label}</div>
+                            <div class="details-row-value">
+                                ${item.value ? `${item.value}${item.unit ? ` ${item.unit}` : ""}` : this._translations["not_set"] || "\u2014"}
+                            </div>
+                        </div>
+                    `)}
+                </div>
+                <mwc-button slot="primaryAction" @click=${this._closeDetailsDialog}>
+                    ${this._translations["close"] || "Close"}
+                </mwc-button>
+            </ha-dialog>
         `;
+    }
+    _renderOverview() {
+        if (!this._hass) return (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)``;
+        this._loadTranslations();
+        const filter = this._config?.overview_filter ?? "overdue";
+        const deviceEntitiesMap = new Map();
+        for (const entity of Object.values(this._hass.entities || {}))if (entity?.entity_id && entity?.device_id) {
+            const list = deviceEntitiesMap.get(entity.device_id) || [];
+            list.push(entity.entity_id);
+            deviceEntitiesMap.set(entity.device_id, list);
+        }
+        const taskDefs = this._getTaskDefs();
+        const deviceStats = new Map();
+        const deviceTaskCounts = new Map();
+        const totals = {
+            overdue: 0,
+            today: 0
+        };
+        const taskCounts = new Map();
+        const devices = Object.values(this._hass.devices || {});
+        const findEntityId = (entities, prefix)=>entities.find((id)=>id.startsWith(prefix));
+        const isTaskEnabled = (entities, taskKey)=>{
+            if (taskKey === "mist") {
+                const id = findEntityId(entities, "select.simple_plant_extended_misting_enabled_");
+                return !id || this._hass.states[id]?.state === "on";
+            }
+            if (taskKey === "clean") {
+                const id = findEntityId(entities, "select.simple_plant_extended_cleaning_enabled_");
+                return !id || this._hass.states[id]?.state === "on";
+            }
+            return true;
+        };
+        for (const device of devices){
+            const entities = deviceEntitiesMap.get(device.id) || [];
+            const stats = {
+                overdue: 0,
+                today: 0
+            };
+            const perTask = new Map();
+            let hasTask = false;
+            for (const def of taskDefs){
+                if (!isTaskEnabled(entities, def.key)) continue;
+                const problemId = findEntityId(entities, def.problemPrefix);
+                const todoId = findEntityId(entities, def.todoPrefix);
+                const isProblem = problemId && this._hass.states[problemId]?.state === "on";
+                const isTodo = todoId && this._hass.states[todoId]?.state === "on" && !isProblem;
+                if (!isProblem && !isTodo) continue;
+                hasTask = true;
+                const taskStats = perTask.get(def.key) || {
+                    overdue: 0,
+                    today: 0
+                };
+                const typeCounts = taskCounts.get(def.key) || {
+                    overdue: 0,
+                    today: 0
+                };
+                if (isProblem) {
+                    stats.overdue += 1;
+                    totals.overdue += 1;
+                    taskStats.overdue += 1;
+                    typeCounts.overdue += 1;
+                }
+                if (isTodo) {
+                    stats.today += 1;
+                    totals.today += 1;
+                    taskStats.today += 1;
+                    typeCounts.today += 1;
+                }
+                perTask.set(def.key, taskStats);
+                taskCounts.set(def.key, typeCounts);
+            }
+            if (hasTask) {
+                deviceStats.set(device.id, stats);
+                deviceTaskCounts.set(device.id, perTask);
+            }
+        }
+        const imageEntityByDevice = new Map();
+        for (const entity of Object.values(this._hass.entities || {}))if (entity?.device_id && entity?.entity_id?.startsWith("image.simple_plant_extended_picture_")) imageEntityByDevice.set(entity.device_id, entity.entity_id);
+        const rows = Array.from(deviceStats.entries()).map(([deviceId, stats])=>{
+            if (filter === "overdue" && stats.overdue === 0) return null;
+            if (filter === "today" && stats.today === 0) return null;
+            const device = devices.find((d)=>d.id === deviceId);
+            const name = device?.name || deviceId;
+            const imageEntityId = imageEntityByDevice.get(deviceId);
+            const imageState = imageEntityId ? this._hass.states[imageEntityId] : undefined;
+            const imageSrc = imageState?.attributes?.entity_picture ? this._hass.hassUrl ? this._hass.hassUrl(imageState.attributes.entity_picture) : imageState.attributes.entity_picture : "";
+            const perTask = deviceTaskCounts.get(deviceId) || new Map();
+            return {
+                deviceId: deviceId,
+                name: name,
+                stats: stats,
+                imageSrc: imageSrc,
+                perTask: perTask
+            };
+        }).filter(Boolean);
+        const taskPills = taskDefs.map((def)=>{
+            const counts = taskCounts.get(def.key) || {
+                overdue: 0,
+                today: 0
+            };
+            const count = filter === "overdue" ? counts.overdue : filter === "today" ? counts.today : counts.overdue + counts.today;
+            if (!count) return null;
+            return {
+                ...def,
+                count: count
+            };
+        }).filter(Boolean);
+        return (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`
+            <ha-card>
+                <div class="card-content">
+                    <div class="info">
+                        <div class="section-title overview-title">${this._translations["plant_tasks"] || "Plant tasks"}</div>
+                        <div class="overview-summary">
+                            ${filter !== "today" ? (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`
+                                      <button class="overview-total-pill status-pill is-on" @click=${()=>this._openOverviewTotalsDialog("overdue")}>
+                                          ${totals.overdue} ${this._translations["overdue"] || "Overdue"}
+                                      </button>
+                                  ` : (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)``}
+                            ${filter !== "overdue" ? (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`
+                                      <button class="overview-total-pill status-pill" @click=${()=>this._openOverviewTotalsDialog("today")}>
+                                          ${totals.today} ${this._translations["today"] || "Today"}
+                                      </button>
+                                  ` : (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)``}
+                        </div>
+                        <div class="overview-task-pills">
+                            ${taskPills.map((pill)=>(0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`
+                                    <button class="overview-task-pill" @click=${()=>this._openOverviewTaskDialog(pill.key)}>
+                                        <ha-icon class="overview-task-icon" .icon=${pill.icon}></ha-icon>
+                                        <span class="overview-task-count">${pill.count}</span>
+                                    </button>
+                                `)}
+                        </div>
+                        <div class="details-list">
+                            ${rows.length ? rows.map((row)=>(0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`
+                                          <div class="details-row detail-clickable overview-row">
+                                              <div class="overview-row-main">
+                                                  <div class="overview-row-label" @click=${()=>this._openPlantDialog(row.deviceId)}>
+                                                      ${row.imageSrc ? (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`<img class="overview-plant-image" src=${row.imageSrc} alt="" />` : (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`<ha-icon class="overview-plant-icon" .icon=${"mdi:flower"}></ha-icon>`}
+                                                      <span class="overview-plant-name">${row.name}</span>
+                                                  </div>
+                                                  <div class="overview-subtitle">
+                                                      <span class="overview-subtitle-text">
+                                                          ${filter === "overdue" ? `${row.stats.overdue} ${this._translations["overdue"] || "Overdue"}` : filter === "today" ? `${row.stats.today} ${this._translations["today"] || "Today"}` : `${row.stats.overdue + row.stats.today} ${this._translations["tasks"] || "Tasks"}`}
+                                                      </span>
+                                                      <span class="overview-subtitle-line"></span>
+                                                  </div>
+                                                  <div class="overview-row-value">
+                                                      ${taskDefs.map((def)=>{
+                const counts = row.perTask.get(def.key) || {
+                    overdue: 0,
+                    today: 0
+                };
+                const count = filter === "overdue" ? counts.overdue : filter === "today" ? counts.today : counts.overdue + counts.today;
+                if (!count) return (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)``;
+                return (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`
+                                                              <button class="overview-task-pill" @click=${()=>this._openOverviewTaskDialog(def.key, row.deviceId)}>
+                                                                  <ha-icon class="overview-task-icon" .icon=${def.icon}></ha-icon>
+                                                                  <span class="overview-task-count">${count}</span>
+                                                              </button>
+                                                          `;
+            })}
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      `) : (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`<div class="activity-empty">${this._translations["no_activity"] || "No activity yet"}</div>`}
+                        </div>
+                    </div>
+                </div>
+                <ha-dialog .open=${this._overview_task_dialog_open} @closed=${this._closeOverviewTaskDialog}>
+                    <div slot="heading">${this._overview_task_title || this._translations["tasks"] || "Tasks"}</div>
+                    ${this._overview_task_items.length ? (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`
+                              <div class="overview-dialog-actions">
+                                  <mwc-button @click=${this._markAllOverviewTasks}>
+                                      ${this._translations["confirm"] || "Confirm"} ${this._translations["all"] || "All"}
+                                  </mwc-button>
+                              </div>
+                          ` : (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)``}
+                    <div class="details-list">
+                        ${this._overview_task_items.length ? this._overview_task_items.map((item)=>(0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`
+                                      <div class="details-row">
+                                          <div class="details-row-label">
+                                              ${item.name}
+                                              ${item.taskLabel ? (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`<span class="overview-task-row-label">${item.taskLabel}</span>` : (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)``}
+                                          </div>
+                                          <div class="details-row-value">
+                                              <span class="status-pill ${item.status === "overdue" ? "is-on" : ""}">
+                                                  ${item.status === "overdue" ? this._translations["overdue"] || "Overdue" : this._translations["today"] || "Today"}
+                                              </span>
+                                              <ha-icon-button
+                                                  class="overview-task-action"
+                                                  .label=${this._translations["confirm"] || "Confirm"}
+                                                  .disabled=${!item.actionEntityId}
+                                                  @click=${(ev)=>{
+                ev.stopPropagation();
+                if (item.actionEntityId) this._pressActionButton(item.actionEntityId);
+            }}
+                                              >
+                                                  <ha-icon .icon=${"mdi:check"}></ha-icon>
+                                              </ha-icon-button>
+                                          </div>
+                                      </div>
+                                  `) : (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`<div class="activity-empty">${this._translations["no_activity"] || "No activity yet"}</div>`}
+                    </div>
+                    <mwc-button slot="primaryAction" @click=${this._closeOverviewTaskDialog}>
+                        ${this._translations["close"] || "Close"}
+                    </mwc-button>
+                </ha-dialog>
+                <ha-dialog .open=${this._plant_dialog_open} @closed=${this._closePlantDialog}>
+                    <div slot="heading">${this._plant_dialog_device || ""}</div>
+                    ${this._plant_card_el ? this._plant_card_el : (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)``}
+                    <mwc-button slot="primaryAction" @click=${this._closePlantDialog}>
+                        ${this._translations["close"] || "Close"}
+                    </mwc-button>
+                </ha-dialog>
+            </ha-card>
+        `;
+    }
+    async _openPlantDialog(deviceId) {
+        const device = Object.values(this._hass.devices || {}).find((d)=>d.id === deviceId);
+        this._plant_dialog_device = device?.name || deviceId;
+        this._plant_dialog_open = true;
+        if (!this._helpers) {
+            const loader = window.loadCardHelpers;
+            if (loader) this._helpers = await loader();
+        }
+        const config = {
+            type: `custom:${(0, $3cb55e3e7ebd776a$export$31089ea8b3e502e3)}`,
+            device: deviceId
+        };
+        if (this._helpers?.createCardElement) {
+            this._plant_card_el = this._helpers.createCardElement(config);
+            this._plant_card_el.hass = this._hass;
+        }
+    }
+    _closePlantDialog() {
+        this._plant_dialog_open = false;
+    }
+    _openOverviewTaskDialog(taskKey, deviceId) {
+        this._overview_task_type = taskKey;
+        const def = this._getTaskDef(taskKey);
+        this._overview_task_title = def?.label || this._translations["tasks"] || "Tasks";
+        this._overview_task_items = this._buildOverviewTaskItems(taskKey, undefined, deviceId);
+        this._overview_task_dialog_open = true;
+    }
+    _openOverviewTotalsDialog(status) {
+        this._overview_task_type = status;
+        this._overview_task_title = status === "overdue" ? this._translations["overdue"] || "Overdue" : this._translations["today"] || "Today";
+        this._overview_task_items = this._buildOverviewTaskItems(undefined, status);
+        this._overview_task_dialog_open = true;
+    }
+    _closeOverviewTaskDialog() {
+        this._overview_task_dialog_open = false;
+        this._overview_task_type = null;
+        this._overview_task_title = null;
+        this._overview_task_items = [];
+    }
+    _buildOverviewTaskItems(taskKey, statusFilter, deviceIdFilter) {
+        if (!this._hass) return [];
+        const filter = this._config?.overview_filter ?? "overdue";
+        const taskDefs = this._getTaskDefs();
+        const def = taskKey ? taskDefs.find((item)=>item.key === taskKey) : null;
+        const deviceEntitiesMap = new Map();
+        for (const entity of Object.values(this._hass.entities || {}))if (entity?.entity_id && entity?.device_id) {
+            const list = deviceEntitiesMap.get(entity.device_id) || [];
+            list.push(entity.entity_id);
+            deviceEntitiesMap.set(entity.device_id, list);
+        }
+        const devices = Object.values(this._hass.devices || {});
+        const deviceSlugMap = new Map();
+        for (const [deviceId, entities] of deviceEntitiesMap.entries()){
+            const pictureEntity = entities.find((id)=>id.startsWith("image.simple_plant_extended_picture_"));
+            if (pictureEntity) deviceSlugMap.set(deviceId, pictureEntity.replace("image.simple_plant_extended_picture_", ""));
+        }
+        const items = [];
+        const findEntityId = (entities, prefix)=>entities.find((id)=>id.startsWith(prefix));
+        const isTaskEnabled = (entities, key)=>{
+            if (key === "mist") {
+                const id = findEntityId(entities, "select.simple_plant_extended_misting_enabled_");
+                return !id || this._hass.states[id]?.state === "on";
+            }
+            if (key === "clean") {
+                const id = findEntityId(entities, "select.simple_plant_extended_cleaning_enabled_");
+                return !id || this._hass.states[id]?.state === "on";
+            }
+            return true;
+        };
+        for (const device of devices){
+            if (deviceIdFilter && device.id !== deviceIdFilter) continue;
+            const entities = deviceEntitiesMap.get(device.id) || [];
+            const defsToCheck = def ? [
+                def
+            ] : taskDefs;
+            for (const itemDef of defsToCheck){
+                if (!isTaskEnabled(entities, itemDef.key)) continue;
+                const problemId = findEntityId(entities, itemDef.problemPrefix);
+                const todoId = findEntityId(entities, itemDef.todoPrefix);
+                let actionId = findEntityId(entities, itemDef.actionPrefix);
+                if (!actionId) {
+                    const slug = deviceSlugMap.get(device.id);
+                    if (slug) actionId = `${itemDef.actionPrefix}${slug}`;
+                }
+                const isProblem = problemId && this._hass.states[problemId]?.state === "on";
+                const isTodo = todoId && this._hass.states[todoId]?.state === "on" && !isProblem;
+                if ((statusFilter === "overdue" || statusFilter == null && (filter === "overdue" || filter === "all")) && isProblem) items.push({
+                    deviceId: device.id,
+                    name: device.name,
+                    status: "overdue",
+                    actionEntityId: actionId,
+                    taskLabel: itemDef.label
+                });
+                if ((statusFilter === "today" || statusFilter == null && (filter === "today" || filter === "all")) && isTodo) items.push({
+                    deviceId: device.id,
+                    name: device.name,
+                    status: "today",
+                    actionEntityId: actionId,
+                    taskLabel: itemDef.label
+                });
+            }
+        }
+        return items;
+    }
+    _pressActionButton(entityId) {
+        this._hass.callService("button", "press", {}, {
+            entity_id: entityId
+        });
+    }
+    _getTaskDefs() {
+        return [
+            {
+                key: "water",
+                label: this._translations["watering"] || "Watering",
+                icon: "mdi:watering-can",
+                problemPrefix: "binary_sensor.simple_plant_extended_problem_",
+                todoPrefix: "binary_sensor.simple_plant_extended_todo_",
+                actionPrefix: "button.simple_plant_extended_mark_watered_"
+            },
+            {
+                key: "feed",
+                label: this._translations["feed_button"] || "Fertilize",
+                icon: "mdi:seed",
+                problemPrefix: "binary_sensor.simple_plant_extended_fertilization_problem_",
+                todoPrefix: "binary_sensor.simple_plant_extended_fertilization_todo_",
+                actionPrefix: "button.simple_plant_extended_mark_fertilized_"
+            },
+            {
+                key: "mist",
+                label: this._translations["mark_mist"] || "Misting",
+                icon: "mdi:spray-bottle",
+                problemPrefix: "binary_sensor.simple_plant_extended_misting_problem_",
+                todoPrefix: "binary_sensor.simple_plant_extended_misting_todo_",
+                actionPrefix: "button.simple_plant_extended_mark_misted_"
+            },
+            {
+                key: "clean",
+                label: this._translations["mark_clean"] || "Cleaning",
+                icon: "mdi:liquid-spot",
+                problemPrefix: "binary_sensor.simple_plant_extended_cleaning_problem_",
+                todoPrefix: "binary_sensor.simple_plant_extended_cleaning_todo_",
+                actionPrefix: "button.simple_plant_extended_mark_cleaned_"
+            }
+        ];
+    }
+    _getTaskDef(taskKey) {
+        return this._getTaskDefs().find((item)=>item.key === taskKey);
     }
     static getConfigElement() {
         // Create and return an editor element for UI card edition
@@ -1225,24 +2626,127 @@ class $a399cc6bbb0eb26a$export$5cbd5455d3b33941 extends (0, $ab210b2da7b39b9d$ex
         });
     }
     async _loadTranslations() {
-        if (!this._entity_states.size || this._translations_loaded) return;
+        if (!this._hass || this._translations_loaded) return;
+        if (typeof this._hass.loadBackendTranslation === "function") await this._hass.loadBackendTranslation("config", (0, $3cb55e3e7ebd776a$export$a970e6ec17c9a61d));
+        const localizeFirst = (keys, fallback)=>{
+            for (const key of keys){
+                const localized = this._hass.localize(key);
+                if (localized && localized !== key) return localized;
+            }
+            return fallback;
+        };
+        const language = this._hass.language || "en";
+        const fallbackMap = {
+            nl: {
+                no_activity: "Nog geen activiteit",
+                more_details: "Meer details",
+                plant_tasks: "Planttaken",
+                overdue: "Te laat",
+                today: "Vandaag",
+                tasks: "Taken",
+                all: "Alles",
+                interval: "Elke",
+                method: "Methode",
+                no_notes: "Geen notities"
+            },
+            fr: {
+                no_activity: "Aucune activit\xe9 pour le moment",
+                more_details: "Plus de d\xe9tails",
+                plant_tasks: "T\xe2ches des plantes",
+                overdue: "En retard",
+                today: "Aujourd'hui",
+                tasks: "T\xe2ches",
+                all: "Tout",
+                interval: "Chaque",
+                method: "M\xe9thode",
+                no_notes: "Aucune note"
+            },
+            ru: {
+                no_activity: "\u041F\u043E\u043A\u0430 \u043D\u0435\u0442 \u0430\u043A\u0442\u0438\u0432\u043D\u043E\u0441\u0442\u0438",
+                more_details: "\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435",
+                plant_tasks: "\u0417\u0430\u0434\u0430\u0447\u0438 \u0440\u0430\u0441\u0442\u0435\u043D\u0438\u0439",
+                overdue: "\u041F\u0440\u043E\u0441\u0440\u043E\u0447\u0435\u043D\u043E",
+                today: "\u0421\u0435\u0433\u043E\u0434\u043D\u044F",
+                tasks: "\u0417\u0430\u0434\u0430\u0447\u0438",
+                all: "\u0412\u0441\u0435",
+                interval: "\u041A\u0430\u0436\u0434\u044B\u0439",
+                method: "\u041C\u0435\u0442\u043E\u0434",
+                no_notes: "\u0417\u0430\u043C\u0435\u0442\u043E\u043A \u043D\u0435\u0442"
+            }
+        };
+        const fallbackFor = (key, fallback)=>fallbackMap[language]?.[key] || fallback;
         const translation_key = `component.${(0, $3cb55e3e7ebd776a$export$a970e6ec17c9a61d)}.entity.button.mark_watered.name`;
         const feed_translation_key = `component.${(0, $3cb55e3e7ebd776a$export$a970e6ec17c9a61d)}.entity.feed.name`;
-        this._translations["button"] = `${this._hass.localize(translation_key)} !`;
-        this._translations["feed_button"] = `${this._hass.localize(feed_translation_key)} !`;
+        this._translations["button"] = this._hass.localize(translation_key) || "Mark as watered";
+        this._translations["feed_button"] = this._hass.localize(feed_translation_key) || "Mark fertilized";
         this._translations["cancel"] = this._hass.localize("ui.dialogs.generic.cancel");
+        this._translations["close"] = this._hass.localize("ui.common.close");
         this._translations["today"] = this._hass.localize("ui.components.calendar.today");
         this._translations["late"] = this._hass.localize(`component.${(0, $3cb55e3e7ebd776a$export$a970e6ec17c9a61d)}.entity.binary_sensor.problem.name`);
-        this._translations["interval"] = 'Every';
-        this._translations["method"] = 'Method';
+        this._translations["interval"] = localizeFirst([
+            "ui.common.interval",
+            "ui.common.every"
+        ], fallbackFor("interval", "Every"));
+        this._translations["method"] = localizeFirst([
+            "ui.common.method"
+        ], fallbackFor("method", "Method"));
+        this._translations["watering"] = this._hass.localize(`component.${(0, $3cb55e3e7ebd776a$export$a970e6ec17c9a61d)}.entity.button.mark_watered.name`) || "Watering";
+        this._translations["details"] = this._hass.localize("ui.common.details") || "Details";
+        this._translations["activity"] = this._hass.localize("ui.panel.logbook") || "Activity";
+        this._translations["no_activity"] = localizeFirst([
+            "ui.panel.logbook.no_entries",
+            "ui.panel.logbook.no_entries_found",
+            "ui.panel.logbook.empty",
+            "ui.common.no_entries"
+        ], fallbackFor("no_activity", "No activity yet"));
+        this._translations["plant_tasks"] = localizeFirst([
+            "ui.panel.lovelace.editor.card.generic.tasks",
+            "ui.common.tasks"
+        ], fallbackFor("plant_tasks", "Plant tasks"));
+        this._translations["overdue"] = localizeFirst([
+            "ui.common.overdue"
+        ], fallbackFor("overdue", "Overdue"));
+        this._translations["today"] = localizeFirst([
+            "ui.components.calendar.today",
+            "ui.common.today"
+        ], fallbackFor("today", "Today"));
+        this._translations["tasks"] = localizeFirst([
+            "ui.common.tasks"
+        ], fallbackFor("tasks", "Tasks"));
+        this._translations["all"] = localizeFirst([
+            "ui.common.all"
+        ], fallbackFor("all", "All"));
+        this._translations["notes"] = this._hass.localize("component.simple_plant_extended.entity.text.notes.name") || "Notes";
+        this._translations["no_notes"] = this._hass.localize("component.simple_plant_extended.entity.text.notes.name") ? `${this._hass.localize("component.simple_plant_extended.entity.text.notes.name")}: ${this._translations["no_activity"]}` : fallbackFor("no_notes", "No notes");
+        this._translations["add_note"] = this._hass.localize("ui.common.add") || "Add note";
+        this._translations["add"] = this._hass.localize("ui.common.add") || "Add";
+        this._translations["mark_mist"] = this._hass.localize(`component.${(0, $3cb55e3e7ebd776a$export$a970e6ec17c9a61d)}.entity.button.mark_misted.name`) || "Mark misted";
+        this._translations["mark_clean"] = this._hass.localize(`component.${(0, $3cb55e3e7ebd776a$export$a970e6ec17c9a61d)}.entity.button.mark_cleaned.name`) || "Mark cleaned";
+        this._translations["confirm_title"] = this._hass.localize("ui.dialogs.confirmation.title") || "Confirm";
+        this._translations["confirm"] = this._hass.localize("ui.common.confirm") || "Confirm";
+        this._translations["confirm_mark"] = this._hass.localize("ui.common.mark") || "mark as";
+        this._translations["action_water"] = this._hass.localize(`component.${(0, $3cb55e3e7ebd776a$export$a970e6ec17c9a61d)}.entity.button.mark_watered.name`) || "watered";
+        this._translations["action_feed"] = this._hass.localize(`component.${(0, $3cb55e3e7ebd776a$export$a970e6ec17c9a61d)}.entity.button.mark_fertilized.name`) || "fertilized";
+        this._translations["action_mist"] = this._hass.localize(`component.${(0, $3cb55e3e7ebd776a$export$a970e6ec17c9a61d)}.entity.button.mark_misted.name`) || "misted";
+        this._translations["action_clean"] = this._hass.localize(`component.${(0, $3cb55e3e7ebd776a$export$a970e6ec17c9a61d)}.entity.button.mark_cleaned.name`) || "cleaned";
+        this._translations["more_details"] = localizeFirst([
+            "ui.panel.lovelace.editor.card.generic.show_more",
+            "ui.common.show_more",
+            "ui.common.more_info",
+            "ui.common.more_details"
+        ], fallbackFor("more_details", "More details"));
+        this._translations["not_set"] = this._hass.localize("ui.common.unavailable") || "\u2014";
         this._translations_loaded = true;
     }
     constructor(...args){
-        super(...args), this._translations_loaded = false, this._states_updated = true, this._entity_ids = {}, this._entity_states = new Map(), this._config_updated = true, this._translations = {
+        super(...args), this._translations_loaded = false, this._states_updated = true, this._activity_dialog_open = false, this._notes_dialog_open = false, this._new_note = "", this._confirm_dialog_open = false, this._confirm_action = null, this._confirm_message = "", this._details_dialog_open = false, this._edit_acquisition_date = "", this._edit_distance_to_window = "", this._edit_pot_diameter = "", this._edit_humidity_sensor = "", this._edit_temperature_sensor = "", this._edit_light_sensor = "", this._overview_task_dialog_open = false, this._overview_task_type = null, this._overview_task_title = null, this._overview_task_items = [], this._plant_dialog_open = false, this._plant_dialog_device = null, this._plant_card_el = null, this._helpers = null, this._entity_ids = {}, this._entity_states = new Map(), this._config_updated = true, this._translations = {
             "button": "Mark as Watered",
             "feed_button": "Mark Fertilized",
             "cancel": "Cancel",
             "today": "today"
+        }, this._markAllOverviewTasks = ()=>{
+            const unique = new Set(this._overview_task_items.map((item)=>item.actionEntityId).filter((id)=>Boolean(id)));
+            for (const entityId of unique)this._pressActionButton(entityId);
         };
     }
 }
@@ -1254,11 +2758,73 @@ class $d067581fc0d59830$export$22bae9358daff77d extends (0, $ab210b2da7b39b9d$ex
     static{
         this.schema = [
             {
+                name: "mode",
+                label: "Mode",
+                selector: {
+                    select: {
+                        options: [
+                            "device",
+                            "overview"
+                        ],
+                        custom_value: false
+                    }
+                }
+            },
+            {
                 name: "device",
                 selector: {
                     device: {
                         integration: (0, $3cb55e3e7ebd776a$export$a970e6ec17c9a61d)
                     }
+                }
+            },
+            {
+                name: "overview_filter",
+                label: "Overview filter",
+                selector: {
+                    select: {
+                        options: [
+                            "overdue",
+                            "today",
+                            "all"
+                        ],
+                        custom_value: false
+                    }
+                }
+            },
+            {
+                name: "show_misting",
+                label: "Show misting",
+                selector: {
+                    boolean: {}
+                }
+            },
+            {
+                name: "show_cleaning",
+                label: "Show cleaning",
+                selector: {
+                    boolean: {}
+                }
+            },
+            {
+                name: "show_activity",
+                label: "Show activity timeline",
+                selector: {
+                    boolean: {}
+                }
+            },
+            {
+                name: "show_details",
+                label: "Show details",
+                selector: {
+                    boolean: {}
+                }
+            },
+            {
+                name: "show_notes",
+                label: "Show notes",
+                selector: {
+                    boolean: {}
                 }
             }
         ];
@@ -1275,13 +2841,29 @@ class $d067581fc0d59830$export$22bae9358daff77d extends (0, $ab210b2da7b39b9d$ex
     }
     // setConfig works the same way as for the card itself
     setConfig(config) {
-        this._config = config;
+        this._config = {
+            mode: "device",
+            overview_filter: "overdue",
+            show_misting: true,
+            show_cleaning: true,
+            show_activity: true,
+            show_details: true,
+            show_notes: true,
+            ...config
+        };
     }
     // This function is called when the input element of the editor loses focus
     _valueChanged(ev) {
         if (!this._config || !this._hass) return;
         const _config = Object.assign({}, this._config);
+        _config.mode = ev.detail.value.mode ?? "device";
         _config.device = ev.detail.value.device;
+        _config.overview_filter = ev.detail.value.overview_filter ?? "overdue";
+        _config.show_misting = ev.detail.value.show_misting ?? true;
+        _config.show_cleaning = ev.detail.value.show_cleaning ?? true;
+        _config.show_activity = ev.detail.value.show_activity ?? true;
+        _config.show_details = ev.detail.value.show_details ?? true;
+        _config.show_notes = ev.detail.value.show_notes ?? true;
         this._config = _config;
         const event = new CustomEvent("config-changed", {
             detail: {

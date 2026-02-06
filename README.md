@@ -1,4 +1,7 @@
+Plant mode
 ![Preview of the card](preview.png)
+Plants overview mode
+![Preview of the overview card](overview_preview.png)
 
 # Simple Plant Extended Card
 
@@ -9,6 +12,49 @@ Simple Plant Extended Card is a custom dashboard card for the [Simple Plant Exte
 This repository exists only to allow installation through HACS (which does not allow both an integration and custom card in the same repository)
 
 For any issue regarding this custom card, please report it in [the main repository](https://github.com/jo-anb/simple-plant-extended).
+
+## Features
+
+- Overview for watering, fertilizing, misting, and cleaning
+- Overview mode with totals and per-plant tasks across all devices
+- Extended plant details (size, location, soil, distance, pot size, sensors, age)
+- Optional activity timeline popup
+- Notes row with timeline and add-note dialog
+- UI options to show/hide misting, cleaning, details, and activity
+- Localized select values (soil, location, size, feed method) with English fallback
+
+## Configuration
+
+You can configure the card via the UI editor. The following options are available:
+
+- `mode` (default: `device`): `device` or `overview`
+- `device` (required in `device` mode): Device from the Simple Plant Extended integration
+- `overview_filter` (default: `overdue`): `overdue`, `today`, or `all` (overview mode)
+- `show_misting` (default: `true`)
+- `show_cleaning` (default: `true`)
+- `show_details` (default: `true`)
+- `show_activity` (default: `true`)
+- `show_notes` (default: `true`)
+
+Example YAML:
+
+```yaml
+type: custom:simple-plant-extended-card
+device: 1234567890abcdef
+show_misting: true
+show_cleaning: false
+show_details: true
+show_activity: true
+show_notes: true
+```
+
+Overview example:
+
+```yaml
+type: custom:simple-plant-extended-card
+mode: overview
+overview_filter: overdue
+```
 
 ## Installation
 

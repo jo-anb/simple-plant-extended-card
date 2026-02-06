@@ -3,7 +3,14 @@
   "ci": false,
   "plugins": [
     "@semantic-release/commit-analyzer",
-    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        "writerOpts": {
+          "commitPartial": "#### {{subject}}\n{{#if body}}\n{{body}}\n{{/if}}"
+        }
+      }
+    ],
     "@semantic-release/changelog",
     [
       "@semantic-release/npm",

@@ -1,4 +1,4 @@
-import { HomeAssistant, LovelaceCardConfig } from "custom-card-helpers";``
+import { HomeAssistant, LovelaceCardConfig } from "custom-card-helpers";
 import { html, LitElement } from 'lit';
 
 import { INTEGRATION } from "./consts"
@@ -9,7 +9,14 @@ export class SimplePlantExtendedCardEditor extends LitElement {
     private _config : LovelaceCardConfig;
 
     static schema = [
+        {name: "mode", label: "Mode", selector: { select: { options: ["device", "overview"], custom_value: false } }},
         {name: "device", selector: { device: { integration: INTEGRATION} }},
+        {name: "overview_filter", label: "Overview filter", selector: { select: { options: ["overdue", "today", "all"], custom_value: false } }},
+        {name: "show_misting", label: "Show misting", selector: { boolean: {} }},
+        {name: "show_cleaning", label: "Show cleaning", selector: { boolean: {} }},
+        {name: "show_activity", label: "Show activity timeline", selector: { boolean: {} }},
+        {name: "show_details", label: "Show details", selector: { boolean: {} }},
+        {name: "show_notes", label: "Show notes", selector: { boolean: {} }},
     ]
 
     static properties = {
@@ -22,7 +29,16 @@ export class SimplePlantExtendedCardEditor extends LitElement {
 
     // setConfig works the same way as for the card itself
     setConfig(config: LovelaceCardConfig) {
-        this._config = config;
+        this._config = {
+            mode: "device",
+            overview_filter: "overdue",
+            show_misting: true,
+            show_cleaning: true,
+            show_activity: true,
+            show_details: true,
+            show_notes: true,
+            ...config,
+        } as LovelaceCardConfig;
     }
 
     // This function is called when the input element of the editor loses focus
@@ -31,7 +47,14 @@ export class SimplePlantExtendedCardEditor extends LitElement {
         return;
         }
         const _config = Object.assign({}, this._config);
+        _config.mode = ev.detail.value.mode ?? "device";
         _config.device = ev.detail.value.device;
+        _config.overview_filter = ev.detail.value.overview_filter ?? "overdue";
+        _config.show_misting = ev.detail.value.show_misting ?? true;
+        _config.show_cleaning = ev.detail.value.show_cleaning ?? true;
+        _config.show_activity = ev.detail.value.show_activity ?? true;
+        _config.show_details = ev.detail.value.show_details ?? true;
+        _config.show_notes = ev.detail.value.show_notes ?? true;
 
         this._config = _config;
 
