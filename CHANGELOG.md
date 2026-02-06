@@ -1,3 +1,22 @@
+# [2.0.0](https://github.com/jo-anb/simple-plant-extended-card/compare/v1.0.0...v2.0.0) (2026-02-06)
+
+
+### Features
+
+#### update simple-plant-extended-card with new features and improved documentation compatible with simple-plant-extended version ^v1.1.0
+- Added new configuration options for showing misting, cleaning, activity, details, and notes.
+- Implemented details edit popup with functionality to edit mutiple device properties.
+- Implemented activity and notes popups with functionality to add notes.
+- Enhanced card rendering to include new states and attributes.
+- Improved styles for better layout and presentation of details and activity logs.
+- Add configuration to show plants in overview mode, with a new overview layout and styling.
+- Updated documentation to reflect new features and configuration options, including examples and screenshots.
+
+
+### BREAKING CHANGES
+
+* This version of the card requires simple-plant-extended ^v1.1.0 integration
+
 # [1.0.0](https://github.com/jo-anb/simple-plant-extended-card/compare/v0.0.1...v1.0.0) (2026-01-18)
 
 
